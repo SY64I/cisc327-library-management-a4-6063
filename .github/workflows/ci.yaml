@@ -38,5 +38,5 @@ jobs:
 
       - name: Run tests
         run: |
-          python3 app.py
+          python3 resetdata.py
           pytest
