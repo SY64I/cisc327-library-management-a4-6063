@@ -193,3 +193,6 @@ def test_user_search_book(page: Page):
     page.get_by_role("button", name="🔍 Search").click()
     expect(page.locator("h3")).to_contain_text("Search Results for \"4526138443166\" (isbn)")
     expect(page.locator("tbody")).to_contain_text("4526138443166")
+
+    # Clean all test data after the last test
+    clear_all_data()
