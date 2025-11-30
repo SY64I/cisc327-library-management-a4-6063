@@ -35,8 +35,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
-          pip install pytest pytest-cov pytest-mock
-          pip install requests
+          playwright install --with-deps
 
       - name: Run tests
         run: |
