@@ -144,6 +144,10 @@ def test_user_search_book(page: Page):
     """Test case that walks through the process of searching a book."""
     page.goto("http://localhost:5000")
 
+    # Expect a title "to contain" a substring.
+    expect(page).to_have_title(re.compile("Library Management System"))
+    expect(page).to_have_url("http://localhost:5000/catalog")
+
     # Go to the search page, ensure we're on the right page
     page.get_by_role("link", name="🔍 Search").click()
     page.goto("http://localhost:5000/search")
